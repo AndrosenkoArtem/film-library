@@ -1,0 +1,22 @@
+{
+  "name": "film-library",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://AndrosenkoArtem.github.io/film-library",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Androsenko Artem",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrosenkoArtem/film-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndrosenkoArtem/film-library/issues"
+  }
+}
