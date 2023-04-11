@@ -1,0 +1,46 @@
+class PixabeyApi {
+  constructor() {
+    this.page = 1;
+    this.results = 0;
+    this.total_results = 0;
+  }
+  async fetchUrl(name) {
+    const searchParams = new URLSearchParams({
+      api_key: '14b7b0dab2e9101796b24880530a0048',
+      query: name,
+      page: this.page,
+    });
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?${searchParams}`
+    );
+    const films = response.json();
+    this.total_results = await films;
+
+    return films;
+  }
+  resetPage() {
+    this.page = 1;
+  }
+  resetResults() {
+    this.results = 0;
+  }
+  getPage() {
+    return this.page;
+  }
+  setPage(newPage) {
+    this.page += newPage;
+  }
+  getResults() {
+    return this.results;
+  }
+  setResults(newCurrent) {
+    this.results += newCurrent;
+  }
+  getTotal_results() {
+    return this.total_results;
+  }
+  setTotal_results(newtotal) {
+    this.total_results = newtotal;
+  }
+}
+export { PixabeyApi };

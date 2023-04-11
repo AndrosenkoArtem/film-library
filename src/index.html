@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film-library</title>
+    <link rel="shortcut icon" href="./images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <header class="header-section">
+      <div class="container header">
+        <a class="logo" href="./index.html">
+          <div class="center">
+            <svg class="logo__icon" width="20" height="20">
+              <use href="./images/sprite.svg#icon-logo"></use>
+            </svg>
+            <div class="logo__text waviy">
+              <span>F</span>
+              <span>i</span>
+              <span>l</span>
+              <span>m</span>
+              <span>o</span>
+              <span>t</span>
+              <span>e</span>
+              <span>k</span>
+              <span>a</span>
+            </div>
+          </div>
+        </a>
+        <form class="form" id="search-form">
+          <div class="form__search-container">
+            <input
+              class="form__input"
+              name="searchQuery"
+              type="text"
+              placeholder="Movie search"
+            />
+            <button class="form__button" type="submit">
+              <svg class="form__icon" width="12px" height="12px">
+                <use href="./images/sprite.svg#icon-search"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+        <ul class="pages">
+          <li class="pages__item">
+            <p class="pages__subtitle">
+              <a class="pages__link current-page" href="">HOME</a>
+            </p>
+          </li>
+          <li class="pages__item">
+            <p class="pages__subtitle">
+              <a class="pages__link" href="">MY LIBRARY</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="films-section">
+        <div class="container films">
+          <ul class="films__list">
+            <!-- <li class="films__item">
+              <div class="films__card">
+                <div class="films__img-container">
+                  <img
+                    class="films__img"
+                    src="https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
+                <div class="info">
+                  <p class="info__title">nasvanie</p>
+                  <p class="info__subtitle">subnasvanie</p>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-section">
+      <div class="container footer">
+        <p class="footer__subtitle">
+          © 2020 | All Rights Reserved | Developed with Me
+        </p>
+      </div>
+    </footer>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
