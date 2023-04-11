@@ -9,19 +9,21 @@ filmApiResponse();
 async function filmApiResponse() {
   const popularFilmResolte = await popularFilm.fetchUrl();
   const allFilms = popularFilmResolte.results;
+  const allGenres = await generApiResponse();
 
-  createCards(allFilms);
+  createCards({ allFilms, allGenres });
   return popularFilmResolte;
 }
-async function renderCards(response) {
-  const films = await response;
-  const allGenres = await generApiResponse();
+async function renderCards({ allFilms, allGenres }) {
+  const films = await allFilms;
+  const geners = await allGenres;
+
   return films
     .map(film => {
       const newArray = [];
-      allGenres.map(el => {
-        if (film.genre_ids.includes(el.id)) {
-          newArray.push(el.name);
+      geners.map(gener => {
+        if (film.genre_ids.includes(gener.id)) {
+          newArray.push(gener.name);
         }
       });
       return `
