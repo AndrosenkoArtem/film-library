@@ -4,13 +4,14 @@ class Themoviedb {
     this.results = 0;
     this.total_results = 0;
   }
-  async fetchUrl(name) {
+  async fetchSearcFilms(name) {
     try {
       const searchParams = new URLSearchParams({
         api_key: '14b7b0dab2e9101796b24880530a0048',
         query: name,
         page: this.page,
       });
+
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?${searchParams}`
       );
@@ -23,17 +24,26 @@ class Themoviedb {
       throw new Error('Error fetching film genres');
     }
   }
-  resetPage() {
-    this.page = 1;
+  async fetchPopularFilms() {
+    try {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/trending/movie/week?api_key=14b7b0dab2e9101796b24880530a0048&page=${this.page}`
+      );
+      const films = response.json();
+      return films;
+    } catch (error) {
+      console.error(error);
+      throw new Error('Error fetching film genres');
+    }
   }
-  resetResults() {
-    this.results = 0;
-  }
-  getPage() {
-    return this.page;
-  }
+  // resetPage() {
+  //   this.page = 1;
+  // }
+  // resetResults() {
+  //   this.results = 0;
+  // }
   setPage(newPage) {
-    this.page += newPage;
+    this.page = newPage;
   }
   getResults() {
     return this.results;

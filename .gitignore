@@ -102,5 +102,5 @@ dist
 
 # TernJS port file
 .tern-port
-.parcel-cache
-.parcel-cache/data.mdb
+/.parcel-cache
+/.parcel-cache/data.mdb

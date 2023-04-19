@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
-    <header class="header-section">
+    <header class="header-section header-section-home">
       <div class="container header">
         <a class="logo" href="./index.html">
           <div class="center">
@@ -49,6 +49,9 @@
               </svg>
             </button>
           </div>
+          <p class="search-error hidden">
+            Search result not successful. Enter the correct movie name and
+          </p>
         </form>
         <ul class="pages">
           <li class="pages__item">
@@ -58,7 +61,7 @@
           </li>
           <li class="pages__item">
             <p class="pages__subtitle">
-              <a class="pages__link" href="">MY LIBRARY</a>
+              <a class="pages__link" href="./library-page.html">MY LIBRARY</a>
             </p>
           </li>
         </ul>
@@ -68,7 +71,8 @@
     <main>
       <section class="films-section">
         <div class="container films">
-          <ul class="films__list"></ul>
+          <ul class="films__list" id="film_list"></ul>
+          <div id="pagination" class="tui-pagination"></div>
         </div>
         <div class="modal-backdrop">
           <div class="modal-container">

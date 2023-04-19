@@ -1,7 +1,10 @@
-@import './common';
-@import './variables';
-@import './home-header';
-@import './films';
+@import './utils/common';
+@import './utils/variables';
+@import './home-page/home-header';
 @import './footer';
-@import './modal-film';
+@import './films/films';
 @import './spiner';
+@import './modal/modal-film';
+@import './pagination/pagination';
+@import './library-page/library-header';
+@import './library-page/film-list';

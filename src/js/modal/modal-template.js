@@ -60,15 +60,13 @@ export default function marcapModal(currentFilm, filmGeners) {
           <p class="about__description">
              ${addAudit(currentFilm.overview)}
           </p>
-          <button class="add-button" type="button" data-id="${
+          <button class="add-button add-watched-js" type="button" data-id="${
             currentFilm.id
           }">add to Watched</button>
-          <button class="add-button" type="button" data-id="${
+          <button class="add-button add-queue-js" type="button" data-id="${
             currentFilm.id
           }">add to queue</button>
         </div>
-
-
     `;
 }
 

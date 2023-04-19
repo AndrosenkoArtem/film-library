@@ -1,12 +1,17 @@
 import { render } from '../utils/index';
+import ImagePlaceholder from '../../images/thumbnail.jpg';
 
 const filmsListRef = document.querySelector('.films__list');
 
+export async function renderCards(response) {
+  const filmCard = await createCard(response);
+  render(filmsListRef, filmCard);
+}
 async function createCard({ allFilms, allGenres }) {
   const films = await allFilms;
   const geners = await allGenres;
 
-  return films.results
+  return films
     .map(film => {
       const filmGeners = [];
       pushGenerInFilmGeners({ geners, filmGeners, film });
@@ -15,10 +20,6 @@ async function createCard({ allFilms, allGenres }) {
       return marcapCard({ film, filmGenerSpace });
     })
     .join('');
-}
-export async function renderCards(response) {
-  const filmCard = await createCard(response);
-  render(filmsListRef, filmCard);
 }
 function pushGenerInFilmGeners({ geners, filmGeners, film }) {
   geners.map(gener => {
@@ -42,7 +43,11 @@ function marcapCard({ film, filmGenerSpace }) {
                 <img
                 data-id="${film.id}"
                 class="films__img"
-                src="https://image.tmdb.org/t/p/w500/${film.poster_path}"
+                src="${
+                  film.poster_path
+                    ? 'https://image.tmdb.org/t/p/w500/' + film.poster_path
+                    : ImagePlaceholder
+                }"
                 alt="${film.title}"
                 loading="lazy"
                 />

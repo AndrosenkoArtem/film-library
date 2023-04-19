@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>library</title>
+    <link rel="shortcut icon" href="./images/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <header class="header-section header-section-library">
+      <div class="container header">
+        <a class="logo" href="./index.html">
+          <div class="center">
+            <svg class="logo__icon" width="20" height="20">
+              <use href="./images/sprite.svg#icon-logo"></use>
+            </svg>
+            <div class="logo__text waviy">
+              <span>F</span>
+              <span>i</span>
+              <span>l</span>
+              <span>m</span>
+              <span>o</span>
+              <span>t</span>
+              <span>e</span>
+              <span>k</span>
+              <span>a</span>
+            </div>
+          </div>
+        </a>
+        <ul class="film-list">
+          <li class="film-list__item">
+            <button class="film-list__button" type="button" data-watched>
+              WATCHED
+            </button>
+          </li>
+          <li class="film-list__item">
+            <button class="film-list__button" type="button" data-queue>
+              QUEUE
+            </button>
+          </li>
+        </ul>
+        <ul class="pages">
+          <li class="pages__item">
+            <p class="pages__subtitle">
+              <a class="pages__link" href="./index.html">HOME</a>
+            </p>
+          </li>
+          <li class="pages__item">
+            <p class="pages__subtitle">
+              <a class="pages__link current-page" href="">MY LIBRARY</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="film-section library library-plug">
+        <div class="container library-container">
+          <h1 class="film-title">Сhoose a list of movies</h1>
+          <ul class="films__list film--library"></ul>
+        </div>
+        <div class="modal-backdrop">
+          <div class="modal-container">
+            <button class="button-close" type="button">
+              <div class="custom-icon"></div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-section">
+      <div class="container footer">
+        <p class="footer__subtitle">
+          © 2020 | All Rights Reserved | Developed with Me
+        </p>
+      </div>
+    </footer>
+    <script src="./library.js" type="module"></script>
+  </body>
+</html>
