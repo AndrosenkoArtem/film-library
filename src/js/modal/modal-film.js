@@ -21,7 +21,6 @@ export function onOpenModalWithSingleFilm(e) {
   const currentFilm = filmCollection.results.find(film => {
     return parseInt(film.id) === parseInt(e.target.dataset.id);
   });
-  console.log(currentFilm);
   const template = renderMarcap(currentFilm);
   render(refs.modalContainer, template);
   const youtubeBtn = document.querySelectorAll('.youtube-button');

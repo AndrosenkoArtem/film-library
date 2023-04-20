@@ -21,15 +21,15 @@ async function onOpenTrailer(e) {
   const backdrop = document.querySelector('.backdrop-trailer');
   backdrop.classList.add('active');
   backdrop.addEventListener('click', onClickBeckdropCloseModalWindow);
-  closeModalBtn = document.querySelector('.close-modal__trailer');
-  closeModalBtn.addEventListener('click', closeModalYouTube);
-  window.addEventListener('keydown', onEscCloseModalWindow);
 }
 function createIframe(results) {
   const iframe = `<div class="backdrop-trailer"><div class="modal-trailer"><button class="close-modal__trailer"><div class="custom-icon-2 white--custom"></div></button>
     <iframe class="iframe" fullscreen src="https://www.youtube.com/embed/${results}" frameborder="0"></iframe>
     </div></div>`;
   document.body.insertAdjacentHTML('beforeend', iframe);
+  const closeModalBtn = document.querySelector('.close-modal__trailer');
+  closeModalBtn.addEventListener('click', closeModalYouTube);
+  window.addEventListener('keydown', onEscCloseModalWindow);
   /**
    * closeModal
    */
