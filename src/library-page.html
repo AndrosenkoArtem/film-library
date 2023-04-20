@@ -17,24 +17,38 @@
   <body>
     <header class="header-section header-section-library">
       <div class="container header">
-        <a class="logo" href="./index.html">
-          <div class="center">
-            <svg class="logo__icon" width="20" height="20">
-              <use href="./images/sprite.svg#icon-logo"></use>
-            </svg>
-            <div class="logo__text waviy">
-              <span style="--i: 1">F</span>
-              <span style="--i: 2">i</span>
-              <span style="--i: 3">l</span>
-              <span style="--i: 4">m</span>
-              <span style="--i: 5">o</span>
-              <span style="--i: 6">t</span>
-              <span style="--i: 7">e</span>
-              <span style="--i: 8">k</span>
-              <span style="--i: 9">a</span>
+        <div class="header-group">
+          <a class="logo" href="./index.html">
+            <div class="center">
+              <svg class="logo__icon" width="20" height="20">
+                <use href="./images/sprite.svg#icon-logo"></use>
+              </svg>
+              <div class="logo__text waviy">
+                <span style="--i: 1">F</span>
+                <span style="--i: 2">i</span>
+                <span style="--i: 3">l</span>
+                <span style="--i: 4">m</span>
+                <span style="--i: 5">o</span>
+                <span style="--i: 6">t</span>
+                <span style="--i: 7">e</span>
+                <span style="--i: 8">k</span>
+                <span style="--i: 9">a</span>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+          <ul class="pages">
+            <li class="pages__item">
+              <p class="pages__subtitle">
+                <a class="pages__link" href="./index.html">HOME</a>
+              </p>
+            </li>
+            <li class="pages__item">
+              <p class="pages__subtitle">
+                <a class="pages__link current-page" href="">MY LIBRARY</a>
+              </p>
+            </li>
+          </ul>
+        </div>
         <ul class="film-list">
           <li class="film-list__item">
             <button class="film-list__button" type="button" data-watched>
@@ -45,18 +59,6 @@
             <button class="film-list__button" type="button" data-queue>
               QUEUE
             </button>
-          </li>
-        </ul>
-        <ul class="pages">
-          <li class="pages__item">
-            <p class="pages__subtitle">
-              <a class="pages__link" href="./index.html">HOME</a>
-            </p>
-          </li>
-          <li class="pages__item">
-            <p class="pages__subtitle">
-              <a class="pages__link current-page" href="">MY LIBRARY</a>
-            </p>
           </li>
         </ul>
       </div>

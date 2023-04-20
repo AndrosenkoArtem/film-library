@@ -21,6 +21,7 @@ themoviedb.fetchPopularFilms().then(response => {
   refs.filmList.addEventListener('click', e =>
     onOpenModalWithSingleFilm(e, response)
   );
+  createPagination();
 });
 popularFilmsGenres.fetchUrl().then(response => {
   LocalStorage.setItem('all-geners', response);
@@ -28,12 +29,12 @@ popularFilmsGenres.fetchUrl().then(response => {
 });
 
 async function filmApiResponse() {
-  const allFilms = JSON.parse(localStorage.getItem('all-films')).results;
+  const allFilms = JSON.parse(localStorage.getItem('all-films'))?.results;
 
   if (!allFilms) {
     return [];
   }
-  const allGenres = JSON.parse(localStorage.getItem('all-geners')).genres;
+  const allGenres = JSON.parse(localStorage.getItem('all-geners'))?.genres;
 
   renderCards({ allFilms, allGenres });
   refs.pagination.style = 'display:flex';
@@ -42,15 +43,17 @@ async function filmApiResponse() {
 /**
  * Pagination
  */
-const paginationOption = new PaginationOption(
-  LocalStorage.getItem('all-films')?.total_results
-);
-paginationOption.pagination.on('afterMove', async ({ page }) => {
-  refs.filmList.innerHTML = '';
-  themoviedb.setPage(page);
+async function createPagination() {
+  const paginationOption = new PaginationOption(
+    LocalStorage.getItem('all-films')?.total_results
+  );
+  paginationOption.pagination.on('afterMove', async ({ page }) => {
+    refs.filmList.innerHTML = '';
+    themoviedb.setPage(page);
 
-  await themoviedb.fetchPopularFilms().then(response => {
-    LocalStorage.setItem('all-films', response);
-    filmApiResponse();
+    await themoviedb.fetchPopularFilms().then(response => {
+      LocalStorage.setItem('all-films', response);
+      filmApiResponse();
+    });
   });
-});
+}

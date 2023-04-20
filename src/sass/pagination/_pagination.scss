@@ -20,6 +20,9 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
 }
 
 .tui-pagination .tui-page-btn {
@@ -150,4 +153,12 @@
   height: 12px;
   padding: 8px 0 6px;
   vertical-align: top;
+}
+.tui-page-btn.tui-last,
+.tui-page-btn.tui-first,
+.tui-page-btn.tui-next-is-ellip.tui-last-child,
+.tui-page-btn.tui-prev-is-ellip.tui-first-child {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    display: none;
+  }
 }

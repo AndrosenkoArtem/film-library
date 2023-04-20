@@ -1,21 +1,71 @@
 .header-section {
   width: 100%;
   margin-bottom: 60px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
 }
 .header-section-home {
-  background-image: url(../images/home-background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.56)),
+      url(../images/background/home-background-mobile@1x.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.281),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url('../images/background/home-background-mobile@2x.jpg');
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.56)),
+      url(../images/background/home-background-tablet@1x.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.281),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url('../images/background/home-background-tablet@2x.jpg');
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.56)),
+      url(../images/background/home-background@1x.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.281),
+          rgba(0, 0, 0, 0.56)
+        ),
+        url('../images/background/home-background@2x.jpg');
+    }
+  }
 }
 .header {
-  display: flex;
-  justify-content: space-between;
+  @media screen and (min-width: 320px) and (max-width: 1279px) {
+    position: relative;
+  }
 }
 .container {
 }
+.header-group {
+  display: flex;
+  justify-content: space-between;
+}
 .logo {
   padding-top: 40px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    padding-top: 40px;
+  }
 
   &__icon {
     height: 25px;
@@ -27,6 +77,9 @@
   }
 }
 .waviy {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    display: none;
+  }
   font-size: 0;
   margin-left: 12px;
   span {
@@ -46,11 +99,20 @@
   }
 }
 .form {
-  padding-top: 111.69px;
+  padding-top: 58px;
   padding-bottom: 80px;
+  text-align: center;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    justify-content: center;
+    display: flex;
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    text-align: left;
+  }
   // .form__input
   &__search-container {
     position: relative;
+    display: inline-block;
   }
   &__input {
     width: 394px;
@@ -72,6 +134,12 @@
 
       color: $white-color;
     }
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      width: 336px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      width: 280px;
+    }
   }
   .search-error {
     position: absolute;
@@ -80,6 +148,13 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
+    @media screen and (min-width: 768px) and (max-width: 1279px) {
+      bottom: 45px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      width: 280px;
+      bottom: 30px;
+    }
   }
   .search-error.hidden {
     display: none;
@@ -99,6 +174,9 @@
 .pages {
   display: flex;
   padding-top: 49px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    padding-top: 40px;
+  }
   // .pages__item
 
   &__item {
