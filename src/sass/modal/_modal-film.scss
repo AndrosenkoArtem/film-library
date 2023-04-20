@@ -26,11 +26,11 @@
   background-color: $white-color;
   overflow: scroll;
   @media screen and (min-width: 320px) and (max-width: 830px) {
-    padding: 40px 12px 10px;
-    top: 50%;
-    margin-top: 10px;
     display: block;
     overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 95%;
   }
 }
 .modal-img-container {
@@ -77,11 +77,9 @@
   // .info-stats__list
 
   &__list {
-    @media screen and (min-width: 320px) and (max-width: 830px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   // .info-stats__item
@@ -187,7 +185,7 @@
     outline: none;
     padding: 0 20px;
     @media screen and (min-width: 320px) and (max-width: 830px) {
-      padding: 0px 0px;
+      padding: 4px 10px;
     }
   }
 }
