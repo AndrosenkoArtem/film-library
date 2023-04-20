@@ -43,7 +43,7 @@ async function filmApiResponse() {
  * Pagination
  */
 const paginationOption = new PaginationOption(
-  LocalStorage.getItem('all-films').total_results
+  async () => await LocalStorage.getItem('all-films').total_results
 );
 paginationOption.pagination.on('afterMove', async ({ page }) => {
   refs.filmList.innerHTML = '';
