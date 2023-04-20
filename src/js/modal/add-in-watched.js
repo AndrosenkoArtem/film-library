@@ -9,7 +9,7 @@ export default function addFilmInWatchedArray() {
   function onClickWatchedBtn() {
     const filmsWatched = JSON.parse(localStorage.getItem('filmsWatched'));
     const allFilms = LocalStorage.getItem('all-films');
-    const currentFilm = allFilms.results.find(
+    const currentFilm = allFilms?.results?.find(
       film => film.id === Number(addWatched.dataset.id)
     );
     if (filmsWatched) {

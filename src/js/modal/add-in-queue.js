@@ -8,7 +8,7 @@ export default function addFilmInWatchedArray() {
   function onClickWatchedBtn() {
     const filmsQueue = JSON.parse(localStorage.getItem('filmsQueue'));
     const allFilms = LocalStorage.getItem('all-films');
-    const currentFilm = allFilms.results.find(
+    const currentFilm = allFilms?.results?.find(
       film => film.id === Number(addQueue.dataset.id)
     );
     if (filmsQueue) {
@@ -27,7 +27,7 @@ export default function addFilmInWatchedArray() {
         LocalStorage.setItem('filmsQueue', [currentFilm]);
       }
     }
-    addQueue.textContent = 'DELETE TO queue';
+    addQueue.textContent = 'DELETE TO QUEUE';
   }
 }
 /**
@@ -40,7 +40,7 @@ function textContentBtnDelete(addQueue) {
       film => film.id === Number(addQueue.dataset.id)
     );
     if (repeatedFilm) {
-      addQueue.textContent = 'delete to watched';
+      addQueue.textContent = 'delete to queue';
     }
   }
 }
