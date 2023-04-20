@@ -21,6 +21,9 @@ async function onOpenTrailer(e) {
   const backdrop = document.querySelector('.backdrop-trailer');
   backdrop.classList.add('active');
   backdrop.addEventListener('click', onClickBeckdropCloseModalWindow);
+  closeModalBtn = document.querySelector('.close-modal__trailer');
+  closeModalBtn.addEventListener('click', closeModalYouTube);
+  window.addEventListener('keydown', onEscCloseModalWindow);
 }
 function createIframe(results) {
   const iframe = `<div class="backdrop-trailer"><div class="modal-trailer"><button class="close-modal__trailer"><div class="custom-icon-2 white--custom"></div></button>
@@ -30,9 +33,6 @@ function createIframe(results) {
   /**
    * closeModal
    */
-  closeModalBtn = document.querySelector('.close-modal__trailer');
-  closeModalBtn.addEventListener('click', closeModalYouTube);
-  window.addEventListener('keydown', onEscCloseModalWindow);
 }
 /**
  * закрыть модальное окно
