@@ -32,7 +32,6 @@ async function onSubmitForm(e) {
     filmsListRef.innerHTML = '';
     themoviedb.setPage(page);
     await searchResponse(inputValue);
-    console.log(page);
   });
 
   filmsListRef.innerHTML = '';
@@ -69,9 +68,7 @@ async function searchResponse(inputValue) {
      */
     if (!filmArray.results.length) {
       paginationRef.style = 'display:none';
-      Notiflix.Notify.failure(
-        'Sorry, there are no films matching your search query. Please try again.'
-      );
+      errorRef.classList.remove('hidden');
     }
     renderCards({ allFilms, allGenres });
     spiner.classList.remove('visible');

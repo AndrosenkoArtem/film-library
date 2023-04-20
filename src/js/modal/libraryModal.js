@@ -14,14 +14,30 @@ const refs = {
  * Открытие модального окна ниже
  */
 export function onOpenModalWithSingleFilm(e) {
-  const filmCollection = LocalStorage.getItem('all-films');
-  if (e.target.className !== 'films__img') {
-    return;
+  const filmLibrary = document.querySelector('.film--library');
+  //   const filmList = document.querySelector('.films__list');
+  //   const filmSection = document.querySelector('.film-section');
+  //   const libraryContainer = document.querySelector('.library-container');
+  const watchedBtn = document.querySelector('[data-watched]');
+  const queueBtn = document.querySelector('[data-queue]');
+
+  let allFilms = null;
+
+  if (filmLibrary) {
+    if (watchedBtn.classList.contains('is-active')) {
+      allFilms = JSON.parse(localStorage.getItem('filmsWatched'));
+    }
+    if (queueBtn.classList.contains('is-active')) {
+      allFilms = JSON.parse(localStorage.getItem('filmsQueue'));
+    }
+    if (e.target.className !== 'films__img') {
+      return;
+    }
   }
-  const currentFilm = filmCollection.results.find(film => {
+  const currentFilm = allFilms?.find(film => {
     return parseInt(film.id) === parseInt(e.target.dataset.id);
   });
-  console.log(currentFilm);
+
   const template = renderMarcap(currentFilm);
   render(refs.modalContainer, template);
   const youtubeBtn = document.querySelectorAll('.youtube-button');

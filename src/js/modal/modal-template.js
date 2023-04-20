@@ -1,3 +1,4 @@
+import ImagePlaceholder from '../../images/thumbnail.jpg';
 /**
  * Modal template.
  * @param {Object} currentFilm
@@ -8,7 +9,11 @@ export default function marcapModal(currentFilm, filmGeners) {
         <div class="modal-img-container">
           <img
             class="modal-img"
-            src="https://image.tmdb.org/t/p/w500/${currentFilm.poster_path}"
+            src="${
+              currentFilm.poster_path
+                ? 'https://image.tmdb.org/t/p/w500/' + currentFilm.poster_path
+                : ImagePlaceholder
+            }"
             alt="${addAudit(currentFilm.title)}"
           />
         </div>

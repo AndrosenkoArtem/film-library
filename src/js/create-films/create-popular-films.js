@@ -5,6 +5,7 @@ import { LocalStorage } from '../utils';
 import { onOpenModalWithSingleFilm } from '../modal/modal-film';
 import { renderCards } from '../utils/index';
 import PaginationOption from '../pagination/paginationHome';
+
 const refs = {
   filmList: document.querySelector('.films__list'),
   pagination: document.querySelector('#pagination'),
