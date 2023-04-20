@@ -20,9 +20,13 @@ export default function addFilmInWatchedArray() {
         deleteFilm({ filmsWatched, repeatedFilm, addWatched });
         return;
       }
-      LocalStorage.setItem('filmsWatched', [...filmsWatched, currentFilm]);
+      if (currentFilm) {
+        LocalStorage.setItem('filmsWatched', [...filmsWatched, currentFilm]);
+      }
     } else {
-      LocalStorage.setItem('filmsWatched', [currentFilm]);
+      if (currentFilm) {
+        LocalStorage.setItem('filmsWatched', [currentFilm]);
+      }
     }
     addWatched.textContent = 'DELETE TO WATCHED';
   }
