@@ -1,5 +1,6 @@
 import fetchTrailers from '../youtube/trailerApi';
 const filmsListRef = document.querySelector('.films__list');
+const filmsSection = document.querySelector('.films-section');
 filmsListRef.addEventListener('click', onOpenTrailer);
 
 async function onOpenTrailer(e) {
@@ -26,7 +27,7 @@ function createIframe(results) {
   const iframe = `<div class="backdrop-trailer"><div class="modal-trailer"><button class="close-modal__trailer"><div class="custom-icon-2 white--custom"></div></button>
     <iframe class="iframe" fullscreen src="https://www.youtube.com/embed/${results}" frameborder="0"></iframe>
     </div></div>`;
-  document.body.insertAdjacentHTML('beforeend', iframe);
+  filmsSection.insertAdjacentHTML('beforeend', iframe);
   const closeModalBtn = document.querySelector('.close-modal__trailer');
   closeModalBtn.addEventListener('click', closeModalYouTube);
   window.addEventListener('keydown', onEscCloseModalWindow);
