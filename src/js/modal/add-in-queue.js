@@ -23,7 +23,7 @@ export default function addFilmInWatchedArray() {
     } else {
       LocalStorage.setItem('filmsQueue', [currentFilm]);
     }
-    addQueue.textContent = 'DELETE TO WATCHED';
+    addQueue.textContent = 'DELETE TO queue';
   }
 }
 /**
@@ -51,3 +51,4 @@ function deleteFilm({ filmsQueue, repeatedFilm, addQueue }) {
   addQueue.textContent = 'add to queue';
 }
 ///////////////////////////////////////////////////////////////////////////
+///
