@@ -162,3 +162,10 @@
     display: none;
   }
 }
+.tui-page-btn.tui-is-disabled.tui-prev,
+.tui-page-btn.tui-is-selected.tui-first-child,
+.tui-page-btn.tui-next {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-left: 0px;
+  }
+}

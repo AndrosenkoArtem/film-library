@@ -6,11 +6,17 @@ $gray-color: #8c8c8c;
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+html {
+  background-color: #f7f7f7;
+  scroll-behavior: smooth;
+}
 body {
   font-family: roboto;
+
+  background-color: white;
 }
-html {
-  scroll-behavior: smooth;
+main {
+  background-color: white;
 }
 button {
   cursor: pointer;
